@@ -2,7 +2,7 @@ export default function NameInput( { user, setUser } ) {
 
     const createUser = (e) => {
         e.preventDefault()
-        
+
         //url is placeholder
         fetch('http://localhost:9292/players', {
             method: 'CREATE',
@@ -10,7 +10,8 @@ export default function NameInput( { user, setUser } ) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                'username': e.username
+                //do not believe the e.target.username is correct pathing
+                'username': e.target.username
             })
         })
         .then(r => r.json())
