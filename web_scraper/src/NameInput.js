@@ -1,6 +1,6 @@
-export default function NameInput() {
+export default function NameInput( {createUser} ) {
     return (
-        <form>
+        <form onSubmit={() => createUser()}>
             <label>
                 Username:
                 <input type='text' name='username' />
