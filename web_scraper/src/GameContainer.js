@@ -2,38 +2,32 @@ import { useState } from 'react'
 import SongCard from './SongCard';
 import Score from '/.Score';
 import NameInput from './NameInput';
+import TurnCounter from './TurnCounter';
 
 
 export default function GameContainer() {
     const [ user, setUser ] = useState('')
     const [ songOne, setSongOne] = useState({})
     const [ songTwo, setSongTwo] = useState({})
-
-    const createUser = (e) => {
-        e.preventDefault()
-
-        fetch('http://localhost:9292/players', {
-            method: 'CREATE',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                'username': e.username
-            })
-        })
-        .then(r => r.json())
-        .then(setUser)
-        .catch(error => alert(error))
-    }
+    const [ score, setScore] = useState(0)
+    const [ turnCounter, setTurnCounter] = useState(1)
 
     return (
         <div>
             {user === ''
                 ? <NameInput 
-                    createUser='createUser'
+                    user = 'user'
+                    setUser = 'setUser'
                 />
                 : <>
-                    <Score />
+                    <Score 
+                        score = 'score'
+                        setScore = 'setScore'
+                    />
+                    <TurnCounter 
+                        turnCounter = 'turnCounter'
+                        setTurnCounter = 'setTurnCounter'
+                    />
                     <SongCard 
                         songOne = 'song' 
                         setSongOne = 'setSong'

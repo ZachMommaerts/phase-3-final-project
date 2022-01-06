@@ -1,4 +1,22 @@
-export default function NameInput( {createUser} ) {
+export default function NameInput( { user, setUser } ) {
+
+    const createUser = (e) => {
+        e.preventDefault()
+
+        fetch('http://localhost:9292/players', {
+            method: 'CREATE',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                'username': e.username
+            })
+        })
+        .then(r => r.json())
+        .then(setUser)
+        .catch(error => alert(error))
+    }
+
     return (
         <form onSubmit={() => createUser()}>
             <label>

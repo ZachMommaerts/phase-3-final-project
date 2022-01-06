@@ -1,5 +1,5 @@
-export default function SongCard() {
+export default function SongCard( { score, setScore } ) {
     return (
-        <p>Score: </p>
+        <p>Score: {score}</p>
     )
 }
