@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import SongCard from './SongCard';
-import Score from '/.Score';
+import Score from './Score';
 import NameInput from './NameInput';
 import TurnCounter from './TurnCounter';
 import Highscores from './Highscores';
