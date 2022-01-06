@@ -6,6 +6,8 @@ import NameInput from './NameInput';
 
 export default function GameContainer() {
     const [ user, setUser ] = useState('')
+    const [ songOne, setSongOne] = useState({})
+    const [ songTwo, setSongTwo] = useState({})
 
     const createUser = (e) => {
         e.preventDefault()
@@ -32,8 +34,14 @@ export default function GameContainer() {
                 />
                 : <>
                     <Score />
-                    <SongCard />
-                    <SongCard /> 
+                    <SongCard 
+                        songOne = 'song' 
+                        setSongOne = 'setSong'
+                    />
+                    <SongCard 
+                        songTwo = 'song' 
+                        setSongTwo = 'setSong'
+                    /> 
                 </>
             }
         </div>
