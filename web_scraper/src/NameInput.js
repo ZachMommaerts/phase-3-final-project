@@ -2,7 +2,8 @@ export default function NameInput( { user, setUser } ) {
 
     const createUser = (e) => {
         e.preventDefault()
-
+        
+        //url is placeholder
         fetch('http://localhost:9292/players', {
             method: 'CREATE',
             headers: {

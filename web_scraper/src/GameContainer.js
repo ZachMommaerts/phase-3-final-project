@@ -31,14 +31,20 @@ export default function GameContainer() {
                     <SongCard 
                         songOne = 'song' 
                         setSongOne = 'setSong'
+                        songTwo = 'opposingSong'
                         turnCounter = 'turnCounter'
                         setTurnCounter = 'setTurnCounter'
+                        score = 'score'
+                        setScore = 'setScore'
                     />
                     <SongCard 
                         songTwo = 'song' 
                         setSongTwo = 'setSong'
+                        songOne = 'opposingSong'
                         turnCounter = 'turnCounter'
                         setTurnCounter = 'setTurnCounter'
+                        score = 'score'
+                        setScore = 'setScore'
                     /> 
                 </>
             }
