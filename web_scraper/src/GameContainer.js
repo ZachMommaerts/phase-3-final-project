@@ -18,35 +18,35 @@ export default function GameContainer() {
             <div>
                 {user === ''
                     ? <NameInput 
-                        user = 'user'
-                        setUser = 'setUser'
+                        user = {user}
+                        setUser = {setUser}
                     />
                     : <>
                         <Score 
-                            score = 'score'
-                            setScore = 'setScore'
+                            score = {score}
+                            setScore = {setScore}
                         />
                         <TurnCounter 
-                            turnCounter = 'turnCounter'
-                            setTurnCounter = 'setTurnCounter'
+                            turnCounter = {turnCounter}
+                            setTurnCounter = {setTurnCounter}
                         />
                         <SongCard 
-                            songOne = 'song' 
-                            setSongOne = 'setSong'
-                            songTwo = 'opposingSong'
-                            turnCounter = 'turnCounter'
-                            setTurnCounter = 'setTurnCounter'
-                            score = 'score'
-                            setScore = 'setScore'
+                            song = {songOne} 
+                            setSong = {setSongOne}
+                            opposingSong = {songTwo}
+                            turnCounter = {turnCounter}
+                            setTurnCounter = {setTurnCounter}
+                            score = {score}
+                            setScore = {setScore}
                         />
                         <SongCard 
-                            songTwo = 'song' 
-                            setSongTwo = 'setSong'
-                            songOne = 'opposingSong'
-                            turnCounter = 'turnCounter'
-                            setTurnCounter = 'setTurnCounter'
-                            score = 'score'
-                            setScore = 'setScore'
+                            song = {songTwo} 
+                            setSong = {setSongTwo}
+                            opposingSong = {songOne}
+                            turnCounter = {turnCounter}
+                            setTurnCounter = {setTurnCounter}
+                            score = {score}
+                            setScore = {setScore}
                         /> 
                     </>
                 }
@@ -55,8 +55,8 @@ export default function GameContainer() {
     } else {
         return (
             <Highscores 
-                turnCounter = 'turnCounter'
-                setTurnCounter = 'setTurnCounter'
+                turnCounter = {turnCounter}
+                setTurnCounter = {setTurnCounter}
             />
         )
     }

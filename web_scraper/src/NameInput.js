@@ -1,26 +1,28 @@
 export default function NameInput( { user, setUser } ) {
 
     const createUser = (e) => {
-        e.preventDefault()
+        e.preventDefault();
 
         //url is placeholder
-        fetch('http://localhost:9292/players', {
-            method: 'CREATE',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                //do not believe the e.target.username is correct pathing
-                'username': e.target.username
-            })
-        })
-        .then(r => r.json())
-        .then(setUser)
-        .catch(error => alert(error))
+        // fetch('http://localhost:9292/players', {
+        //     method: 'CREATE',
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify({
+        //         'username': e.target.username.value
+        //     })
+        // })
+        // .then(r => r.json())
+        // .then(setUser)
+        // .catch(error => alert(error))
+
+        // placeholder until backend is connected
+        setUser(e.target.username.value)
     }
 
     return (
-        <form onSubmit={() => createUser()}>
+        <form onSubmit={(e) => createUser(e)}>
             <label>
                 Username:
                 <input type='text' name='username' />
