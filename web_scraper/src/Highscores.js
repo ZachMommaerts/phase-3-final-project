@@ -7,7 +7,7 @@ export default function Highscores( { turnCounter, setTurnCount  }) {
 
         if(turnCounter === 11) {
         //url is placeholder
-        fetch('http//localhost:9292/players')
+        fetch('http//localhost:9292/leaderboards')
         .then(r => r.json())
         .then(setPlayers)
         .catch(error => alert(error))
@@ -15,15 +15,19 @@ export default function Highscores( { turnCounter, setTurnCount  }) {
 
     }, [turnCounter]);
 
-    // const renderPlayers = players.map( player => { 
-    //     return (
-    //         <>
-    //             <p>player.username</p>
-    //             <p>player.score</p>
-    //         </>
-    // )})
+    const renderPlayers = players.map( player => { 
+        return (
+            <>
+                <p>{player.name}</p>
+                <p>{player.score}</p>
+            </>
+    )})
 
     return(
-        <p>Highscores</p>
+        <div>
+            <p>Highscores</p>
+            {renderPlayers}
+            <button>Play Again</button>
+        </div>
     )
 }

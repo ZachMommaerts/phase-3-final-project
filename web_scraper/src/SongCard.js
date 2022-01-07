@@ -17,14 +17,14 @@ export default function SongCard( { song, setSong, opposingSong, turnCounter, se
         setTurnCounter(turnCounter ++);
 
         // billboardScore is a placeholder
-        song.billboardScore > opposingSong.billboardScore ? setScore(score ++) : setScore(score);
+        song.currentposition > opposingSong.currentposition ? setScore(score ++) : setScore(score);
     };
 
     return (
         // song variables are placeholders
         <div onClick={() => handleClick()}>
             <img src={song.src} alt={song.title} />
-            <h2>{song.title}</h2>
+            <h2>{song.songname}</h2>
             <h2>{song.artist}</h2>
         </div>
     )
