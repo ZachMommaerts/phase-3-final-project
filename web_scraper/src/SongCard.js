@@ -6,7 +6,7 @@ export default function SongCard( { song, setSong, opposingSong, turnCounter, se
         fetch('http://localhost:9292/random_song')
         .then(r => r.json())
         .then(setSong)
-        .then(error => alert(error))
+        .catch(error => alert(error))
 
     }, [turnCounter]);
 

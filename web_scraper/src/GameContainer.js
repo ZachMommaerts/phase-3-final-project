@@ -16,7 +16,7 @@ export default function GameContainer() {
     useEffect(() => {
         fetch(`http://localhost:9292/`)
         .then(r => r.json())
-        .then(error => alert(error))
+        .catch(error => alert(error))
 
     }, []);
 
