@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import SongCard from './SongCard';
 import Score from './Score';
 import NameInput from './NameInput';
@@ -12,6 +12,13 @@ export default function GameContainer() {
     const [ songTwo, setSongTwo] = useState({})
     const [ score, setScore] = useState(0)
     const [ turnCounter, setTurnCounter] = useState(1)
+
+    useEffect(() => {
+        fetch(`http://localhost:9292/`)
+        .then(r => r.json())
+        .then(error => alert(error))
+
+    }, []);
 
     if (turnCounter < 11) {
         return (

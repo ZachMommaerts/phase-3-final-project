@@ -3,22 +3,21 @@ export default function NameInput( { user, setUser } ) {
     const createUser = (e) => {
         e.preventDefault();
 
-        //url is placeholder
-        // fetch('http://localhost:9292/players', {
-        //     method: 'CREATE',
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify({
-        //         'username': e.target.username.value
-        //     })
-        // })
-        // .then(r => r.json())
-        // .then(setUser)
-        // .catch(error => alert(error))
+        fetch('http://localhost:9292/players', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                'username': e.target.username.value
+            })
+        })
+        .then(r => r.json())
+        .then(setUser)
+        .catch(error => alert(error))
 
         // placeholder until backend is connected
-        setUser(e.target.username.value)
+        // setUser(e.target.username.value)
     }
 
     return (
