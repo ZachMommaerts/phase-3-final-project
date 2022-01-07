@@ -5,6 +5,22 @@ export default function Highscores( { turnCounter, setTurnCount  }) {
 
     useEffect(() => {
 
+        // if(turnCounter === 11) {
+        //     //url is placeholder
+        //     fetch(`http//localhost:9292/score/${user}`, {
+        //         method: 'PATCH',
+        //         headers: {
+        //             'Content-Type': 'application/json'
+        //         },
+        //         body: JSON.stringify({
+
+        //         })
+        //     })
+        //     .then(r => r.json())
+        //     .then(setPlayers)
+        //     .catch(error => alert(error))
+        //     }
+
         if(turnCounter === 11) {
         //url is placeholder
         fetch('http//localhost:9292/leaderboards')

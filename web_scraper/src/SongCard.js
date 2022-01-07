@@ -11,9 +11,9 @@ export default function SongCard( { song, setSong, opposingSong, turnCounter, se
     }, [turnCounter]);
 
     const handleClick = () => {
-        setTurnCounter(turnCounter ++);
+        setTurnCounter(state => state = turnCounter ++);
 
-        song.currentposition > opposingSong.currentposition ? setScore(score ++) : setScore(score);
+        song.currentposition > opposingSong.currentposition ? setScore(state => state = score ++) : setScore(score);
     };
 
     return (
