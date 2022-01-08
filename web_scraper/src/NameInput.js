@@ -6,6 +6,7 @@ export default function NameInput( { user, setUser } ) {
         fetch('http://localhost:9292/players', {
             method: 'POST',
             headers: {
+                'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
