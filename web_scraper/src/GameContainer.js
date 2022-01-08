@@ -1,3 +1,4 @@
+import styled from 'styled-components';
 import { useState, useEffect } from 'react'
 import SongCard from './SongCard';
 import Score from './Score';
@@ -5,6 +6,11 @@ import NameInput from './NameInput';
 import TurnCounter from './TurnCounter';
 import Highscores from './Highscores';
 
+const Arena = styled.div`
+    align-items: center;
+    display: flex;
+    justify-content: center;
+`;
 
 export default function GameContainer() {
     const [ user, setUser ] = useState('')
@@ -22,7 +28,7 @@ export default function GameContainer() {
 
     if (turnCounter < 11) {
         return (
-            <div>
+            <Arena>
                 {user === ''
                     ? <NameInput 
                         setUser = {setUser}
@@ -54,7 +60,7 @@ export default function GameContainer() {
                         /> 
                     </>
                 }
-            </div>
+            </Arena>
         )
     } else {
         return (
