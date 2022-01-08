@@ -1,4 +1,4 @@
-export default function SongCard( { score, setScore } ) {
+export default function SongCard( { score } ) {
     return (
         <p>Score: {score}</p>
     )

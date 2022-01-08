@@ -25,18 +25,14 @@ export default function GameContainer() {
             <div>
                 {user === ''
                     ? <NameInput 
-                        user = {user}
                         setUser = {setUser}
                     />
                     : <>
                         <Score 
                             score = {score}
-                            setScore = {setScore}
                         />
                         <TurnCounter 
                             turnCounter = {turnCounter}
-                            setTurnCounter = {setTurnCounter}
-                            score = {score}
                         />
                         <SongCard 
                             song = {songOne} 
@@ -68,7 +64,6 @@ export default function GameContainer() {
                 score = {score}
                 setScore = {setScore}
                 user = {user}
-                setUser = {setUser}
             />
         )
     }

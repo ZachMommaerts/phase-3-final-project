@@ -1,4 +1,4 @@
-export default function TurnCounter( { turnCounter, setTurnCounter, score } ) {
+export default function TurnCounter( { turnCounter } ) {
 
     return (
         <div>

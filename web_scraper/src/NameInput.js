@@ -1,4 +1,4 @@
-export default function NameInput( { user, setUser } ) {
+export default function NameInput( { setUser } ) {
 
     const createUser = (e) => {
         e.preventDefault();

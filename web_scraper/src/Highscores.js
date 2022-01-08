@@ -1,6 +1,6 @@
 import { useEffect, useState} from 'react';
 
-export default function Highscores( { turnCounter, setTurnCounter, score, setScore, user, setUser  }) {
+export default function Highscores( { turnCounter, setTurnCounter, score, setScore, user }) {
     const [ players, setPlayers] = useState([])
     
     useEffect(() => {
