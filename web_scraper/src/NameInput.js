@@ -15,9 +15,6 @@ export default function NameInput( { user, setUser } ) {
         .then(r => r.json())
         .then(setUser)
         .catch(error => alert(error))
-
-        // placeholder until backend is connected
-        // setUser(e.target.username.value)
     }
 
     return (

@@ -1,13 +1,12 @@
 import { useEffect, useState} from 'react';
 
-export default function Highscores( { turnCounter, setTurnCount  }) {
-    const [ players, setPlayers] = useState({})
+export default function Highscores( { turnCounter, setTurnCounter, score, setScore, user, setUser  }) {
+    const [ players, setPlayers] = useState([])
 
     useEffect(() => {
 
-        if(turnCounter === 11) {
-        //url is placeholder
-        fetch('http//localhost:9292/players')
+        if(turnCounter > 10) {
+        fetch('http://localhost:9292/leaderboards')
         .then(r => r.json())
         .then(setPlayers)
         .catch(error => alert(error))
@@ -15,19 +14,35 @@ export default function Highscores( { turnCounter, setTurnCount  }) {
 
     }, [turnCounter]);
 
-    const renderPlayers = players.map( player => { 
+    const renderPlayers = players.map( player => {
         return (
-            <>
-                <p>{player.name}</p>
-                <p>{player.score}</p>
-            </>
+                <p>{player.score} | {player.username.name}</p>
     )})
+
+    const handleRestart = () => {
+        fetch('http://localhost:9292/players', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                'username': user
+            })
+        })
+        .then(r => r.json())
+        .then(setUser)
+        .catch(error => alert(error))
+
+        setTurnCounter(state => state = 1);
+        setScore(state => state = 0)
+
+    }
 
     return(
         <div>
             <p>Highscores</p>
             {renderPlayers}
-            <button>Play Again</button>
+            <button onClick={handleRestart}>Play Again</button>
         </div>
     )
 }

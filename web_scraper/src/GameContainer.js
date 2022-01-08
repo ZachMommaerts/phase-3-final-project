@@ -65,6 +65,10 @@ export default function GameContainer() {
             <Highscores 
                 turnCounter = {turnCounter}
                 setTurnCounter = {setTurnCounter}
+                score = {score}
+                setScore = {setScore}
+                user = {user}
+                setUser = {setUser}
             />
         )
     }

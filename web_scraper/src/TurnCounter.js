@@ -16,11 +16,11 @@ export default function TurnCounter( { turnCounter, setTurnCounter, score } ) {
             .then(r => r.json())
             .catch(error => alert(error))
         }
-    })
+    }, [turnCounter])
 
     return (
         <div>
-            {turnCounter > 10 ? <p>10/10</p> : <p>{turnCounter}/10</p>}
+            {turnCounter > 10 ? <p>Turn: 10/10</p> : <p>Turn: {turnCounter}/10</p>}
         </div>
     )
 }
