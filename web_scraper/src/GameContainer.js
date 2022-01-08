@@ -36,6 +36,7 @@ export default function GameContainer() {
                         <TurnCounter 
                             turnCounter = {turnCounter}
                             setTurnCounter = {setTurnCounter}
+                            score = {score}
                         />
                         <SongCard 
                             song = {songOne} 
