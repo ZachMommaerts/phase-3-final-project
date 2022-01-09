@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 const Div = styled.div`
-    margin-left: 23rem;
+    margin-left: 31em;
 `;
 
 const P = styled.p`
