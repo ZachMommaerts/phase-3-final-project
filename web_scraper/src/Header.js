@@ -7,6 +7,7 @@ const Container = styled.div`
     display: flex;
     justify-content: center;
     height: 20vh;
+    border-radius: 1rem 1rem;
 `;
 
 export default function Header() {

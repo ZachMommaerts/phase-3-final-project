@@ -5,6 +5,7 @@ import GameContainer from './GameContainer';
 import './App.css';
 
 const Background = styled.div`
+  padding-top: 5rem;
   height: 100vh;
   background-color: #1C1C1C;
 `;
@@ -26,6 +27,9 @@ const GlobalStyle = createGlobalStyle`
     &:hover {
       cursor: default;
     }
+  }
+  h3 {
+    font-size: 1.5rem;
   }
   li {
     font-size: 1.25rem;

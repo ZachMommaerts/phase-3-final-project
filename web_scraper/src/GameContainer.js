@@ -74,6 +74,7 @@ export default function GameContainer() {
                                 setTurnCounter = {setTurnCounter}
                                 score = {score}
                                 setScore = {setScore}
+                                isLeft = {true}
                             />
                             <Divider />
                             <SongCard 
@@ -84,6 +85,7 @@ export default function GameContainer() {
                                 setTurnCounter = {setTurnCounter}
                                 score = {score}
                                 setScore = {setScore}
+                                isLeft = {false}
                             />
                         </SongContainer> 
                     </>

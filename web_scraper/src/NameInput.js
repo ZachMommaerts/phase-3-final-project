@@ -1,10 +1,12 @@
 import styled from "styled-components";
 
 const OuterWrapper = styled.div`
+    padding: 2rem;
     line-height: 2rem;
 `
 
 const Wrapper = styled.div`
+    margin-top: 4rem;
     text-align: center;
 `;
 
@@ -27,7 +29,9 @@ const Input = styled.input`
     padding: .25rem;
     color: #EDEDED;
     background-color: #AA0A0A;
+    font-family: 'Assistant', sans-serif;
     border-radius: .15rem;
+    font-size: 1.1rem;
     &:hover {
         background-color: #ff333b;
     }
@@ -56,10 +60,10 @@ export default function NameInput( { setUser } ) {
     return (
         <OuterWrapper>
             <Wrapper>
-                <h2>How to Play:</h2>
+                <h2>How to Play</h2>
             </Wrapper>
-            <li>Two songs from the weekly Billboard 100 will be shown on either side of the screen</li>
-            <li>Click whichever song you think is currently ranked higher</li>
+            <li>Two songs from the weekly Billboard 100 will be shown on either side of the screen.</li>
+            <li>Click whichever song you think is currently ranked higher.</li>
             <li>If you do well enough, you might even see your name up on the leaderboards!</li>
             <Form onSubmit={(e) => createUser(e)}>
                 <label>

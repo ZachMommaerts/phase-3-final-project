@@ -1,4 +1,28 @@
 import { useEffect, useState} from 'react';
+import styled from 'styled-components';
+
+const Div = styled.div`
+    padding-top: 1em;
+    text-align: center;
+`;
+
+const P = styled.p`
+    font-size: 1.1rem;
+`;
+
+const Button = styled.button`
+    border: none;
+    color: #EDEDED;
+    background-color: #AA0A0A;
+    font-family: 'Assistant', sans-serif;
+    width: 8em;
+    height: 2em;
+    border-radius: .15rem;
+    font-size: 1.1rem;
+    &:hover {
+        background-color: #ff333b;
+    }
+`;
 
 export default function Highscores( { turnCounter, setTurnCounter, score, setScore, user }) {
     const [ players, setPlayers] = useState([])
@@ -31,7 +55,7 @@ export default function Highscores( { turnCounter, setTurnCounter, score, setSco
 
     const renderPlayers = players.map( player => {
         return (
-                <p>{player.score} | {player.username.name}</p>
+                <P>{player.score} | {player.username.name}</P>
     )})
 
     const handleRestart = () => {
@@ -54,11 +78,11 @@ export default function Highscores( { turnCounter, setTurnCounter, score, setSco
     }
 
     return(
-        <div>
+        <Div>
             <h2>You scored {score}/10!</h2>
-            <p>Highscores</p>
+            <h3>Highscores</h3>
             {renderPlayers}
-            <button onClick={handleRestart}>Play Again</button>
-        </div>
+            <Button onClick={handleRestart}>Play Again</Button>
+        </Div>
     )
 }
