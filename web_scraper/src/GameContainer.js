@@ -7,9 +7,18 @@ import TurnCounter from './TurnCounter';
 import Highscores from './Highscores';
 
 const Arena = styled.div`
+    margin-right: 25rem;
+    margin-left: 25rem;
+    height: 65vh;
+    background-color: white;
     align-items: center;
     display: flex;
     justify-content: center;
+    border: 1rem;
+    border-top: 0;
+    border-style: solid;
+    border-color: #AA0A0A;
+    border-radius: 0 0 1rem 1rem;
 `;
 
 export default function GameContainer() {

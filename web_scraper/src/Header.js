@@ -1,19 +1,16 @@
 import styled from 'styled-components';
 
 const Container = styled.div`
+    background-color: #AA0A0A;
     display: flex;
     justify-content: center;
-`;
-
-const H1 = styled.h1`
-
 `;
 
 export default function Header() {
 
     return (
         <Container>
-            <H1>Billboard Battle</H1>
+            <h1>Billboard Battle</h1>
         </Container>
     )
 }
