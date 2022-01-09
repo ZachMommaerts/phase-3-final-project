@@ -55,6 +55,7 @@ export default function Highscores( { turnCounter, setTurnCounter, score, setSco
 
     return(
         <div>
+            <h2>You scored {score}/10!</h2>
             <p>Highscores</p>
             {renderPlayers}
             <button onClick={handleRestart}>Play Again</button>

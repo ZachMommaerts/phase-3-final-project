@@ -7,18 +7,32 @@ import TurnCounter from './TurnCounter';
 import Highscores from './Highscores';
 
 const Arena = styled.div`
+    margin-top: -1rem;
     margin-right: 25rem;
     margin-left: 25rem;
     height: 65vh;
-    background-color: white;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    border: 1rem;
+    background-color: #EDEDED;
+    border: 1.5rem;
     border-top: 0;
     border-style: solid;
     border-color: #AA0A0A;
     border-radius: 0 0 1rem 1rem;
+`;
+
+const TopBar = styled.div`
+    background-color: #1C1C1C;
+    display: flex;
+
+`;
+
+const Divider = styled.div`
+    background-color: black;
+    height: 1rem;
+
+`;
+
+const SongContainer = styled.div`
+    display: flex;
 `;
 
 export default function GameContainer() {
@@ -43,43 +57,50 @@ export default function GameContainer() {
                         setUser = {setUser}
                     />
                     : <>
-                        <Score 
-                            score = {score}
-                        />
-                        <TurnCounter 
-                            turnCounter = {turnCounter}
-                        />
-                        <SongCard 
-                            song = {songOne} 
-                            setSong = {setSongOne}
-                            opposingSong = {songTwo}
-                            turnCounter = {turnCounter}
-                            setTurnCounter = {setTurnCounter}
-                            score = {score}
-                            setScore = {setScore}
-                        />
-                        <SongCard 
-                            song = {songTwo} 
-                            setSong = {setSongTwo}
-                            opposingSong = {songOne}
-                            turnCounter = {turnCounter}
-                            setTurnCounter = {setTurnCounter}
-                            score = {score}
-                            setScore = {setScore}
-                        /> 
+                        <TopBar>
+                            <Score 
+                                score = {score}
+                            />
+                            <TurnCounter 
+                                turnCounter = {turnCounter}
+                            />
+                        </TopBar>
+                        <SongContainer>
+                            <SongCard 
+                                song = {songOne} 
+                                setSong = {setSongOne}
+                                opposingSong = {songTwo}
+                                turnCounter = {turnCounter}
+                                setTurnCounter = {setTurnCounter}
+                                score = {score}
+                                setScore = {setScore}
+                            />
+                            <Divider />
+                            <SongCard 
+                                song = {songTwo} 
+                                setSong = {setSongTwo}
+                                opposingSong = {songOne}
+                                turnCounter = {turnCounter}
+                                setTurnCounter = {setTurnCounter}
+                                score = {score}
+                                setScore = {setScore}
+                            />
+                        </SongContainer> 
                     </>
                 }
             </Arena>
         )
     } else {
         return (
-            <Highscores 
-                turnCounter = {turnCounter}
-                setTurnCounter = {setTurnCounter}
-                score = {score}
-                setScore = {setScore}
-                user = {user}
-            />
+            <Arena>
+                <Highscores 
+                    turnCounter = {turnCounter}
+                    setTurnCounter = {setTurnCounter}
+                    score = {score}
+                    setScore = {setScore}
+                    user = {user}
+                />
+            </Arena>
         )
     }
 

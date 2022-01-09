@@ -17,6 +17,24 @@ const GlobalStyle = createGlobalStyle`
     font-size: 5rem;
     color: #EDEDED;
     font-family: 'Fugaz One', cursive;
+    &:hover {
+      cursor: default;
+    }
+  }
+  h2 {
+    font-size: 2rem;
+    &:hover {
+      cursor: default;
+    }
+  }
+  li {
+    font-size: 1.25rem;
+    &:hover {
+      cursor: default;
+    }
+  }
+  p {
+    font-size: 1.5rem;
   }
 `
 

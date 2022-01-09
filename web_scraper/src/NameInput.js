@@ -1,3 +1,38 @@
+import styled from "styled-components";
+
+const OuterWrapper = styled.div`
+    line-height: 2rem;
+`
+
+const Wrapper = styled.div`
+    text-align: center;
+`;
+
+const Form = styled.form`
+    margin-top: 6rem;
+    text-align: center;
+`;
+
+const TextInput = styled.input`
+    font-size: 1rem;
+    height: 1.5rem;
+    width: 15rem;
+`;
+
+const Input = styled.input`
+    margin-top: 1rem;
+    width: 10rem;
+    height: 2rem;
+    border: none;
+    padding: .25rem;
+    color: #EDEDED;
+    background-color: #AA0A0A;
+    border-radius: .15rem;
+    &:hover {
+        background-color: #ff333b;
+    }
+`;
+
 export default function NameInput( { setUser } ) {
 
     const createUser = (e) => {
@@ -19,18 +54,20 @@ export default function NameInput( { setUser } ) {
     }
 
     return (
-        <div>
-            <h2>How to Play:</h2>
-            <ul>Two songs from the weekly Billboard 100 will be shown on either side of the screen</ul>
-            <ul>Click whichever song you believe is currently rated higher</ul>
-            <ul>If you do well enough you might even see your name up on the leaderboards</ul>
-            <form onSubmit={(e) => createUser(e)}>
+        <OuterWrapper>
+            <Wrapper>
+                <h2>How to Play:</h2>
+            </Wrapper>
+            <li>Two songs from the weekly Billboard 100 will be shown on either side of the screen</li>
+            <li>Click whichever song you think is currently ranked higher</li>
+            <li>If you do well enough, you might even see your name up on the leaderboards!</li>
+            <Form onSubmit={(e) => createUser(e)}>
                 <label>
-                    Username:
-                    <input type='text' name='username' />
+                    <TextInput placeholder='username' type='text' name='username' />
                 </label>
-                <input type='submit' value='Submit' />
-            </form>
-        </div>
+                <br />
+                <Input type='submit' value="Play" />
+            </Form>
+        </OuterWrapper>
     )
 }
