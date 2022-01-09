@@ -7,6 +7,7 @@ const OuterWrapper = styled.div`
 
 const Wrapper = styled.div`
     margin-top: 4rem;
+    margin-bottom: 3rem;
     text-align: center;
 `;
 

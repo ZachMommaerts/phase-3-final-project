@@ -32,6 +32,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: 1.5rem;
   }
   li {
+    margin-left: 7rem;
     font-size: 1.25rem;
     &:hover {
       cursor: default;
